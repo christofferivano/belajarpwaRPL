@@ -12,6 +12,10 @@
 	font-family: monxbold;
 	src: url(../belajarpwaRPL/fonts/Montserrat/Montserrat-Black.ttf);
 }
+html
+{
+	scroll-behavior: smooth;
+}
 
 body
 {
@@ -115,6 +119,7 @@ body
 .workingspace
 {
 	margin-top: 120px;
+	margin-bottom: 80px;
 	text-align: center;
 }
 .workingspace img
@@ -150,6 +155,28 @@ body
 	border: 2px solid cyan;
 	/* margin-left: 100px; */
 }
+
+/*forum*/
+.forum
+{
+	font-family: mon;
+}
+
+.forum .card-header
+{
+	font-family: mon;
+	font-size: 20px;
+	color: white;
+	background-color: black;
+	border: 1px solid cyan;
+}
+
+.forum .card-body
+{
+	color: white;
+	background-color: rgba(15,15,15);
+}
+
 /*Testimoni*/
 .testimoni
 {
@@ -166,7 +193,7 @@ body
 }
 .testimoni figure img
 {
-	width: 60px;
+	width: 200px;
 	margin: 20px 10px 10px;
 	opacity: 0.6;
 }
