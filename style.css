@@ -312,6 +312,21 @@ body
 	font-family: mon;
 	font-size: 25px;
 }
+.about 
+{ 
+    animation: fadeInAnimation ease 3s; 
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+} 
+  
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
 
 /*register page*/
 .bodyregis
@@ -432,10 +447,27 @@ body
 	margin: 0 auto;
 }
 
+
+.bodyforum .container img
+{
+	margin-top: 50px;
+	max-width: 100px;
+	display: block;
+	border: 1px solid cyan;
+}
+
+.bodyforum .profil h2
+{
+	font-family: monbold;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+}
+
 .bodyforum .tutor
 {
 	margin: 0 auto;
-	margin-top: 50px;
 	align-items: center;
 }
 
