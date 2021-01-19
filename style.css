@@ -1,4 +1,4 @@
-@font-face{
+/* @font-face{
 	font-family: mon;
 	src: url(../belajarpwaRPL/fonts/Montserrat/Montserrat-Regular.ttf);
 }
@@ -11,7 +11,7 @@
 @font-face{
 	font-family: monxbold;
 	src: url(../belajarpwaRPL/fonts/Montserrat/Montserrat-Black.ttf);
-}
+} */
 html
 {
 	scroll-behavior: smooth;
@@ -40,7 +40,7 @@ body
 }
 .navbar-brand
 {
-	font-family: monxbold;
+	/* font-family: monxbold; */
 	font-size: 32px;
 	color: white;
 }
@@ -110,7 +110,7 @@ body
 	font-weight: 200;
 	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
 	font-size: 40px;
-	font-family: monbold;
+	/* font-family: monbold; */
 	font-weight: 800;
 	margin-bottom: 30px;
 }
@@ -134,7 +134,7 @@ body
 }
 .info-panel h4
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 16px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -143,7 +143,7 @@ body
 }
 .info-panel p
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 14px;
 	color: #ACACAC;
 	margin-top: -5px;
@@ -163,7 +163,7 @@ body
 }
 .workingspace h3
 {
-	font-family: monbold;
+	/* font-family: monbold; */
 	font-size: 52px;
 	font-weight: 200;
 	text-transform: uppercase;
@@ -177,7 +177,7 @@ body
 
 .tutor h2
 {
-	font-family: monbold;
+	/* font-family: monbold; */
 	color: white;
 	margin-top: 100px;
 	font-weight: 900;
@@ -185,7 +185,7 @@ body
 }
 .card
 {
-	font-family: mon;
+	/* font-family: mon; */
 	margin-top: 10px;
 	border: 2px solid cyan;
 	/* margin-left: 100px; */
@@ -194,12 +194,12 @@ body
 /*forum*/
 .forum
 {
-	font-family: mon;
+	/* font-family: mon; */
 }
 
 .forum .card-header
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 20px;
 	color: white;
 	background-color: black;
@@ -225,7 +225,7 @@ body
 }
 .testimoni h5
 {
-	font-family: mon;
+	/* font-family: mon; */
 	text-align: center;
 	font-weight: 200;
 	font-style: italic;
@@ -241,7 +241,7 @@ body
 
 .testimoni figure h5
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 16px;
 	font-weight: bold;
 	font-style: normal;
@@ -249,7 +249,7 @@ body
 }
 .testimoni figure p
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 12px;
 	color: white;
 	margin-top: -5px
@@ -309,7 +309,7 @@ body
 
 .about p
 {
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 25px;
 }
 .about 
@@ -345,7 +345,7 @@ body
 
 .register
 {
-	font-family: monbold;
+	/* font-family: monbold; */
 	font-size: 18px;
 	color: white;
 }
@@ -382,7 +382,7 @@ body
 	margin-bottom: 80px;
 	max-width: 1100px;
 	color: white;
-	font-family: mon;
+	/* font-family: mon; */
 	font-size: 18px;
 }
 .mail img
@@ -415,7 +415,7 @@ body
 .mail h1
 {
 	text-align: center;
-	font-family: monbold;
+	/* font-family: monbold; */
 	font-size: 50px;
 	margin-top: 20px;
 }
@@ -458,7 +458,7 @@ body
 
 .bodyforum .profil h2
 {
-	font-family: monbold;
+	/* font-family: monbold; */
 	font-size: 22px;
 	color: white;
 	text-align: center;
@@ -469,6 +469,8 @@ body
 {
 	margin: 0 auto;
 	align-items: center;
+	max-width: 650px;
+	margin-top: 50px
 }
 
 /*Desktop Version*/
