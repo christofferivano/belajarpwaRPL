@@ -473,6 +473,22 @@ body
 	margin-top: 50px
 }
 
+.bodyforum .tutor img
+{
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.bodyforum .addForum
+{
+	text-align: center;
+}
+
+.bodyforum .addForum a
+{
+	color: white;
+}
+
 /*Desktop Version*/
 
 @media (min-width: 992px) 

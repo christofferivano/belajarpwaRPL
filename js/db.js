@@ -1,15 +1,15 @@
 const db = firebase.firestore();
 
-// db.enablePersistence()
-//   .catch(function(err) {
-//     if (err.code == 'failed-precondition') {
-//       // probably multible tabs open at once
-//       console.log('persistance failed');
-//     } else if (err.code == 'unimplemented') {
-//       // lack of browser support for the feature
-//       console.log('persistance not available');
-//     }
-//   });
+db.enablePersistence()
+  .catch(function(err) {
+    if (err.code == 'failed-precondition') {
+      // probably multible tabs open at once
+      console.log('persistance failed');
+    } else if (err.code == 'unimplemented') {
+      // lack of browser support for the feature
+      console.log('persistance not available');
+    }
+  });
 
 // real-time listener
 db.collection('forum').onSnapshot( snapshot => {
@@ -26,22 +26,23 @@ db.collection('forum').onSnapshot( snapshot => {
   })
 })
 
-// add new recipe
-// const form = document.querySelector('form');
-// form.addEventListener('submit', evt => {
-//   evt.preventDefault();
+// add new disc
+const modal = document.querySelector('.add-disc');
+modal.addEventListener('submit', evt => {
+  evt.preventDefault();
   
-//   const recipe = {
-//     name: form.title.value,
-//     ingredients: form.ingredients.value
-//   };
+  const disc = {
+    user: modal.userName.value,
+    comment: modal.userComment.value
+  };
 
-//   db.collection('recipes').add(recipe)
-//     .catch(err => console.log(err));
+  db.collection('forum').add(disc)
+    .catch(err => console.log(err));
 
-//   form.title.value = '';
-//   form.ingredients.value = '';
-// });
+  // form.userName.value = '';
+  // form.userComment.value = '';
+  modal.reset();
+});
 
 // // remove a recipe
 // const recipeContainer = document.querySelector('.recipes');

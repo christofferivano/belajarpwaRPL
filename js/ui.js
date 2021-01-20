@@ -2,14 +2,10 @@ const addForum = (data, id) => {
     const disc = `
     <div class="card mb-3" data-id = "${id}">
         <div class="row no-gutters">
-            <div class="col-md-3">
-                <img src="/img/anonim.jpg" class="card-img" alt="...">
-            </div>
-            <div class="col-md-9">
-                <div class="card-body">
-                    <h5 class="card-title">${data.user}</h5>
-                    <p class="card-text">${data.comment}</p>
-                </div>
+            <img src="/img/anonim.jpg" class="card-img" alt="...">           
+            <div class="card-body">
+                <h5 class="card-title">${data.user}</h5>
+                <p class="card-text">${data.comment}</p>
             </div>
         </div>
     </div>
