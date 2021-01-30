@@ -65,13 +65,15 @@
             <form>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" onblur="checkUserLIEmail()"placeholder="mail@mail.com">
+                <small id="userLIEmailError" class="form-text text-danger">Please check your login information.</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="loginPassword" onblur="checkUserLIPassword()">
+                <small id="userLIPasswordError" class="form-text text-danger">Please check your password.</small>
               </div>
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-primary"  onclick="logIn()">Login</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -93,20 +95,32 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="formRegis">
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                <label for="userEmail">Email address<span class="text-danger ml-1">*</span></label>
+                <input type="email" class="form-control" id="regisEmail" aria-describedby="emailHelp" onblur="checkUserEmail()">
+                <small id="userEmailError" class="form-text text-danger">Please check your email address.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword2">
+                <label for="userPassword">Password<span class="text-danger ml-1">*</span></label>
+                <input type="password" class="form-control" id="regisPassword" onblur="checkUserPassword()">
+                <small id="userPasswordError" class="form-text text-danger">Your password must be uppercase, lowercase and more than 10 characters.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Name</label>
-                <input type="name" class="form-control" id="exampleInputName1">
+                <label for="userName">Name<span class="text-danger ml-1">*</span></label>
+                <input type="name" class="form-control" id="regisName" onblur="checkUserFullName()">
+                <small id="userNameError" class="form-text text-danger">This Field must be filled.</small>
               </div>
-              <button type="submit" class="btn btn-primary">Register</button>
+              <div class="dropdown show">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="regisStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Status
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item">Tutor</a>
+                  <a class="dropdown-item">Murid</a>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin-top: 15px;" onclick="signUp()">Register</button>
             </form>
           </div>
         </div>
@@ -178,11 +192,11 @@
 
       <!-- Get Tutor-->
       <section class="tutor">
-      <div class="row justify-content-left">
-        <div class="col-lg-8">
-          <h2>Get Your Best Tutor</h5>
-        </div>
-      </div>
+      <!-- <div class="row justify-content-left">
+        <div class="col-lg-8"> -->
+          <h2 style="text-align: center; font-size: 45px; margin-bottom: 20px;">Get Your Best Tutor</h2>
+        <!-- </div>
+      </div> -->
       <!--Carousel Wrapper-->
       <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
@@ -205,11 +219,11 @@
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
     <!--First slide-->
-    <div class="carousel-item active" style="max-width: 80%;">
-      <div class="col-md-3" style="float: left">
+    <div class="carousel-item active">
+      <div class="col-md-3" style="float: left;">
        <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -218,10 +232,10 @@
         </div>
       </div>
 
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -229,10 +243,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -240,10 +254,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -255,11 +269,11 @@
     <!--/.First slide-->
 
     <!--Second slide-->
-    <div class="carousel-item" style="max-width: 80%;">
-      <div class="col-md-3" style="float:left">
+    <div class="carousel-item">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -267,10 +281,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -278,10 +292,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -289,10 +303,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3" style="float:left">
+      <div class="col-md-3" style="float:left;">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="/img/anonim.jpg" alt="Card image cap">
+            src="/img/anonim.jpg" alt="Card image cap" style="max-width: 245px; max-height: 245px;">
           <div class="card-body" style="background-color: black;">
             <h4 class="card-title" style="color: white;">Ivan</h4>
             <p class="card-text" style="color: white;">Semester 3</p>
@@ -314,12 +328,12 @@
       <section class="testimoni">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <!-- <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
           </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          <div class="testi carousel-inner">
+            <!-- <div class="carousel-item active">
               <img src="/img/black.jpg" class="d-block w-100" alt="..." style="height: 300px;">
               <div class="carousel-caption">
                 <figure class="figure">
@@ -348,7 +362,7 @@
                 <h5>Sinbi - TI 20</h5>
                 <p>Mencari tutor lebih mudah.</p>
               </div>
-            </div>
+            </div> -->
           </div>
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -383,7 +397,41 @@
     </div>
     
     <!-- END KONTEN -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBoE-SWFwCKQkCDufhGdrlb0mDa-gSi--c",
+        authDomain: "pwa-tutorme.firebaseapp.com",
+        projectId: "pwa-tutorme",
+        storageBucket: "pwa-tutorme.appspot.com",
+        messagingSenderId: "627416325530",
+        appId: "1:627416325530:web:e88dce8c00bfa42593ae23",
+        measurementId: "G-NYPRX17TH8"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      // const db = firebase.firestore();
+    </script>
+    <script>
+      $(".dropdown-menu a").click(function(){
+        $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+      });
+    </script>
     <script src="/js/app.js"></script>
+    <script src="/js/db2.js"></script>
+    <script src="/js/dbuser.js"></script>
     <script src="/js/ui.js"></script>
   </body>
 </html>

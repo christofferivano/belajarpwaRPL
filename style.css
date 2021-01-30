@@ -489,6 +489,29 @@ body
 	color: white;
 }
 
+.bodyforum .formReply
+{
+	margin: 0 auto;
+	align-items: center;
+	max-width: 650px;
+	margin-top: 50px
+}
+
+.bodyforum .formReply img
+{
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.reply{
+	grid-area: delete;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+  }
+.reply i{
+	font-size: 18px;
+  }
 /*Desktop Version*/
 
 @media (min-width: 992px) 

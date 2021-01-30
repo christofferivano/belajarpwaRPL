@@ -131,18 +131,19 @@
                 <h1>We Are Here to Help!</h1>
             </div>
             <div class="col-lg-5">
-                <form class="formcontact">
+                <form class="formcontact" id="formcontact">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Email address</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1">
+                      <input type="text" class="form-control" id="mailEmail">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Name</label>
-                        <input type="name" class="form-control" id="exampleInputName1">
+                        <input type="text" class="form-control" id="mailName">
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Your Message</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <!-- <textarea class="form-control" id="mailMessage" rows="3"></textarea> -->
+                      <input type="text" class="form-control" id="mailMessage" rows="3">
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -151,8 +152,32 @@
             </div>
         </div>
     </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+          apiKey: "AIzaSyBoE-SWFwCKQkCDufhGdrlb0mDa-gSi--c",
+          authDomain: "pwa-tutorme.firebaseapp.com",
+          projectId: "pwa-tutorme",
+          storageBucket: "pwa-tutorme.appspot.com",
+          messagingSenderId: "627416325530",
+          appId: "1:627416325530:web:e88dce8c00bfa42593ae23",
+          measurementId: "G-NYPRX17TH8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // const db = firebase.firestore();
+      </script>
     <!-- end contact -->
     <script src="/js/app.js"></script>
     <script src="/js/ui.js"></script>
+    <script src="/js/db2.js"></script>
     </body>
 </html>
